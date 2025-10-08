@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Disciplinas</title>
+  <link rel="stylesheet" href="../CSS/styles-diciplinas.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-area">
+        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+        <h1 class="logo-text">NOTADEZ- gerenciamento de diciplinas</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Turmas</a></li>
+        <li><a href="#">Disciplinas</a></li>
+        <li><a href="#">Alunos</a></li>
+        <li><a href="#">Notas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Adicionar Nova Disciplina</h2>
+      <form>
+        <label for="nome">Nome da Disciplina</label>
+        <input type="text" id="nome" placeholder="Ex: Engenharia de Software" required>
+
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" placeholder="Ex: ES01" required>
+
+        <label for="periodo">Período</label>
+        <input type="text" id="periodo" placeholder="Ex: 2º semestre" required>
+
+        <button type="submit" class="btn">Adicionar</button>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Disciplinas Cadastradas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Código</th>
+            <th>Período</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fundamentos da TGS</td>
+            <td>FTGS01</td>
+            <td>1º semestre</td>
+            <td>
+              <button class="edit">Editar</button>
+              <button class="delete">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
