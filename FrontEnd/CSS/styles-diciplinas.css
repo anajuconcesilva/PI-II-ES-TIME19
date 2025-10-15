@@ -25,12 +25,13 @@
 
 /* ===== BODY ===== */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+background: var(--bg-color);
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding-top: 100px;
 }
 
 /* ===== NAVBAR ===== */
@@ -106,12 +107,10 @@ body {
 
 /* ===== CONTAINER ===== */
 .container {
-  margin-top: 90px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 750px;
+  margin: 0 auto 40px;
   background: #fff;
-  padding: 24px;
+  padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -129,7 +128,7 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .form label {
@@ -159,12 +158,12 @@ input {
 }
 
 .btn {
-  padding: 12px;
+  padding: 10px;
   background: var(--bnt-color);
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
