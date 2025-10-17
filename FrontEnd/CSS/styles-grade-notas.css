@@ -1,0 +1,229 @@
+/* ===== RESET E FONTES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: linear-gradient(135deg, #cdd5ae, #d3a373);
+    --h1-color: #111;
+    --menu-color: #e9edca;
+    --p-color: #555;
+    --bnt-color: #536312;
+    --bnt-houver-color: #cdd5ae;
+}
+
+@font-face {
+  font-family: 'FontePrincipal';
+  src: url('BILLO___.TTF') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== BODY ===== */
+body {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background-color: var(--menu-color);
+  color: var(--h1-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'FontePrincipal';
+  color: var(--h1-color);
+}
+
+.logo-text:hover {
+  color: var(--bnt-color);
+}
+
+/* ===== MENU ===== */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: var(--h1-color);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--bnt-color);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--bnt-color);
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* ===== WRAPPER ===== */
+#wrapper {
+  margin-top: 130px;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  width: 85%;
+  max-width: 750px;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FORM ===== */
+.form-section {
+  margin-bottom: 32px;
+}
+
+h2 {
+  color: var(--h1-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.h2-table{
+    text-align: left;
+}
+
+.descricao {
+  text-align: center;
+  color: var(--p-color);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+select:focus {
+  border-color: var(--bnt-color);
+  outline: none;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 12px;
+  background: var(--bnt-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--bnt-houver-color);
+  color: var(--h1-color);
+}
+
+/* ===== TABELA ===== */
+.table-section table {
+  width: 100%;
+  border-collapse: collapse; /*as linhas se juntam, parecendo uma tabela de planilha*/
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--bnt-color);
+}
+
+.actions-section {  
+    display: flex; /*o navegador trata os botões como elementos em linha, um do lado do outro (com o display flex fica mais fácil de controlar o alinhamento, pois temos maior controle a partir de funções como justify content*/
+    justify-content: center; /*Centraliza os botões no meio */
+    gap: 20px;                /* Espaço entre eles */
+    margin-top: 20px;
+}
+
+/*th {
+  background-color: var(--menu-color);
+}--TESTAR DPS*/ 
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
