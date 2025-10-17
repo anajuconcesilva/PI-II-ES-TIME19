@@ -6,7 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 :root {
     --bg-color: linear-gradient(135deg, #cdd5ae, #d3a373);
     --h1-color: #111;
@@ -17,14 +16,12 @@
     --link-houver-color: rgb(172, 9, 9);
 }
 
-
 @font-face {
   font-family: 'FontePrincipal';
-  src: url('BILLO___.TTF') format('truetype');
+  src: url('BILLO___.TTF') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
-
 
 /* ===== BODY ===== */
 body {
@@ -37,7 +34,6 @@ min-height: 100vh;
 padding-top: 100px;
 }
 
-
 /* ===== NAVBAR ===== */
 .navbar {
   width: 100%;
@@ -45,21 +41,21 @@ padding-top: 100px;
   color: var(--h1-color);
   display: flex;
   align-items: center;
-  gap: 200px; /* distância entre logo e menu */
+  justify-content: space-between;
   padding: 12px 60px; /* controla a margem lateral */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-}
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
 
+}
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
-
 
 .logo-text {
   font-size: 1.5rem;
@@ -67,18 +63,15 @@ padding-top: 100px;
   font-family: 'FontePrincipal', Arial, sans-serif;
 }
 
-
 .logo-text:hover {
   color: var(--bnt-color);
 }
 
-
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 8px;
 }
-
 
 /* ===== MENU ===== */
 .menu ul {
@@ -87,7 +80,6 @@ padding-top: 100px;
   gap: 40px;
 }
 
-
 .menu a {
     position: relative;
     text-decoration: none;
@@ -95,7 +87,6 @@ padding-top: 100px;
     font-weight: 600;
     transition: 0.3s ease;
 }
-
 
 .menu a::after {
   content: "";
@@ -108,16 +99,13 @@ padding-top: 100px;
   transition: width 0.3s ease;
 }
 
-
 .menu a:hover {
   color: var(--bnt-color);
 }
 
-
 .menu a:hover::after {
   width: 100%;
 }
-
 
 /* ===== CONTAINER ===== */
 .container {
@@ -129,18 +117,15 @@ padding-top: 100px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-
 /* ===== FORMULÁRIO ===== */
 .form-section {
   margin-bottom: 32px;
 }
 
-
 h2 {
   color: var(--h1-color);
   margin-bottom: 16px;
 }
-
 
 form {
   display: flex;
@@ -148,13 +133,11 @@ form {
   gap: 8px;
 }
 
-
 .form label {
   font-size: 14px;
   margin-bottom: 5px;
   color: #333;
 }
-
 
 .form input {
   padding: 10px;
@@ -165,19 +148,16 @@ form {
   transition: border 0.2s;
 }
 
-
 .form input:focus {
   border-color: var(--bnt-color);
   outline: none;
 }
-
 
 input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-
 
 .btn {
   padding: 10px;
@@ -191,12 +171,10 @@ input {
   transition: background 0.2s;
 }
 
-
 .btn:hover {
   background-color: var(--bnt-houver-color);
   color: var(--h1-color);
 }
-
 
 /* ===== TABELA ===== */
 .table-section table {
@@ -204,13 +182,11 @@ input {
   border-collapse: collapse;
 }
 
-
 th, td {
   text-align: left;
   padding: 12px;
   border-bottom: 1px solid var(--bnt-color);
 }
-
 
 .edit, .delete {
   padding: 6px 10px;
@@ -219,28 +195,23 @@ th, td {
   cursor: pointer;
 }
 
-
 .edit {
   background-color: #4caf50;
   color: white;
 }
-
 
 .delete {
   background-color: #e53935;
   color: white;
 }
 
-
 .edit:hover {
   background-color: #3d8b41;
 }
 
-
 .delete:hover {
   background-color: #c62828;
 }
-
 
 /* ===== FOOTER ===== */
 #footer {
@@ -257,11 +228,9 @@ th, td {
   display: none;
 }
 
-
 .devs:hover {
   color: var(--bnt-color);
 }
-
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
@@ -270,13 +239,11 @@ th, td {
     align-items: flex-start;
   }
 
-
   .menu ul {
     flex-direction: column;
     gap: 12px;
     width: 100%;
   }
-
 
   .menu {
     width: 100%;
