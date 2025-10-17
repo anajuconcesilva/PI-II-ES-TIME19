@@ -41,18 +41,20 @@ padding-top: 100px;
   color: var(--h1-color);
   display: flex;
   align-items: center;
-  gap: 200px; /* distância entre logo e menu */
+  justify-content: space-between;
   padding: 12px 60px; /* controla a margem lateral */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+
 }
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .logo-text {
@@ -66,8 +68,8 @@ padding-top: 100px;
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 8px;
 }
 
@@ -79,11 +81,11 @@ padding-top: 100px;
 }
 
 .menu a {
-    position: relative;
-    text-decoration: none;
-    color: var(--h1-color);
-    font-weight: 600;
-    transition: 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  color: var(--h1-color);
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 .menu a::after {
