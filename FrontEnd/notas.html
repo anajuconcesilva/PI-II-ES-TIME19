@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componente de Notas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="wrapper">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="logo-area">
+        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+        <h1 class="logo-text">NOTADEZ - Componente de notas</h1>
+      </div>
+
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="turmas.html">Turmas</a></li>
+            <li><a href="diciplinas.html">Disciplinas</a></li>
+            <li><a href="alunos.html">Alunos</a></li>
+            <li><a href="formula.html">Fórmula</a></li>
+            <li><a href="notas.html">Notas</a></li>
+            <li><a href="exportacao.html" class="active">Exportar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="container">
+      <!-- ===== FILTRO ===== -->
+      <section class="form-section">
+        <h2>Componente de Notas</h2>
+        <p class="descricao">Cadastre o componente, o peso e o tipo.</p>
+
+        <form>
+            <label for="comp">Nome do componente:</label>
+            <input type="text" id="comp" name="componente" placeholder="Substitutiva" required>
+
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso" placeholder="Ex:10" required>
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" placeholder="Ex:Prova" required>
+
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+
+      <!-- ===== TABELA ===== -->
+      <section class="table-section">
+        <h2>Componentes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Peso</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P1</td>
+              <td>8</td>
+              <td>Prova </td>
+            </tr>
+            <tr>
+              <td>Chamada Oral</td>
+              <td>5</td>
+              <td> Atividade Avaliativa </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
