@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Turmas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="wrapper">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="logo-area">
+        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+        <h1 class="logo-text">NOTADEZ - Gerenciamento de turmas</h1>
+      </div>
+
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="turmas.html">Turmas</a></li>
+            <li><a href="diciplinas.html">Disciplinas</a></li>
+            <li><a href="alunos.html">Alunos</a></li>
+            <li><a href="formula.html">Fórmula</a></li>
+            <li><a href="notas.html">Notas</a></li>
+            <li><a href="exportacao.html" class="active">Exportar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="container">
+      <!-- ===== FILTRO ===== -->
+      <section class="form-section">
+        <h2>Gerenciamento de Turmas</h2>
+        <p class="descricao">Cadastre o nome da turma, o código e o apelido.</p>
+
+        <form>
+            <label for="turma">Nome da turma:</label>
+            <input type="text" id="turma" name="turma" placeholder="EX:TURMA 101" required>
+
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" name="codigo" placeholder="Ex:T101" required>
+
+            <label for="apelido">Apelido:</label>
+            <input type="text" id="apelido" name="apelido" placeholder="Ex:T1" required>
+
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+
+      <!-- ===== TABELA ===== -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome da turma</th>
+              <th>Código</th>
+              <th>Apelido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TURMA 0101</td>
+              <td>T0101</td>
+              <td>T01 </td>
+            </tr>
+            <tr>
+              <td>TURMA 0103</td>
+              <td>T01013</td>
+              <td>T03 </td>          
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
