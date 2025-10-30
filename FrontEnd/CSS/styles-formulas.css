@@ -135,6 +135,7 @@
   
   .h2-table{
       text-align: left;
+      margin-top: 25px; 
   }
   
   .descricao {
@@ -148,11 +149,33 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.form input:focus {
+  border-color: var(--bnt-color);
+  outline: none;
+}
+
+  input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
   
-  label {
-    font-weight: 600;
-    color: #333;
-  }
   
   select {
     padding: 10px;
@@ -187,28 +210,43 @@
   }
   
   /* ===== TABELA ===== */
-  .table-section table {
-    width: 100%;
-    border-collapse: collapse; /*as linhas se juntam, parecendo uma tabela de planilha*/
-    margin-top: 10px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid var(--bnt-color);
-  }
-  
-  .actions-section {  
-      display: flex; /*o navegador trata os botões como elementos em linha, um do lado do outro (com o display flex fica mais fácil de controlar o alinhamento, pois temos maior controle a partir de funções como justify content*/
-      justify-content: center; /*Centraliza os botões no meio */
-      gap: 20px;                /* Espaço entre eles */
-      margin-top: 20px;
-  }
-  
-  /*th {
-    background-color: var(--menu-color);
-  }--TESTAR DPS*/ 
+ .table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--bnt-color);
+}
+
+.edit, .delete {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #3d8b41;
+}
+
+.delete:hover {
+  background-color: #c62828;
+}
   
   /* ===== RESPONSIVO ===== */
   @media (max-width: 768px) {
