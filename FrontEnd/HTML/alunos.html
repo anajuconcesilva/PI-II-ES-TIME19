@@ -12,16 +12,20 @@
   <header class="navbar">
     <div class="logo-area">
         <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
-        <h1 class="logo-text">NOTADEZ - gerenciamento de alunos</h1>
+        <h1 class="logo-text">NOTADEZ - grade de alunos</h1>
     </div>
 
     <nav class="menu">
       <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Turmas</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
         <li><a href="diciplinas.html">Disciplinas</a></li>
         <li><a href="alunos.html" class="active">Alunos</a></li>
-        <li><a href="#">Notas</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html" class="active">Exportar</a></li>
+
+        
       </ul>
     </nav>
   </header>
@@ -32,6 +36,13 @@
       <section class="form-section">
         <h2>Adicionar Novo Aluno</h2>
         <form>
+
+          <label for="nome">Instituição</label>
+          <input type="text" id="instituição" placeholder="Puc-Campinas">
+
+          <label for="turma">Turma</label>
+          <input type="text" id="turma" placeholder="Ex: Turma A" required>
+
           <label for="nome">Nome Completo</label>
           <input type="text" id="nome" required>
 
@@ -40,9 +51,6 @@
 
           <label for="email">E-mail</label>
           <input type="email" id="email" placeholder="Ex: aluno@notadez.com" required>
-
-          <label for="turma">Turma</label>
-          <input type="text" id="turma" placeholder="Ex: Turma A" required>
 
           <button type="submit" class="btn">Cadastrar Aluno</button>
         </form>
@@ -53,19 +61,21 @@
         <table>
           <thead>
             <tr>
+              <th>Instituição</th>
+              <th>Turma</th>
               <th>Nome</th>
               <th>Matrícula</th>
               <th>E-mail</th>
-              <th>Turma</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>Puc-Campinas</td>
+              <td>Turma A</td>
               <td>Eduarda Prado</td>
               <td>202501234</td>
               <td>eduarda@notadez.com</td>
-              <td>Turma A</td>
               <td>
                 <button class="edit">Editar</button>
                 <button class="delete">Excluir</button>
