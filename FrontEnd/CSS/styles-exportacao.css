@@ -154,6 +154,32 @@ label {
   color: #333;
 }
 
+ .form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.form input:focus {
+  border-color: var(--bnt-color);
+  outline: none;
+}
+
+  input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+  
 select {
   padding: 10px;
   border-radius: 8px;
