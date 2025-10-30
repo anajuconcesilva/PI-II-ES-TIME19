@@ -36,6 +36,10 @@
         <p class="descricao">Cadastre o componente, o peso, o tipo e a instituição </p>
 
         <form>
+
+           <label for="comp">Instituição:</label>
+            <input type="text" id="instit" name="instit" placeholder="EX: PUC Campinas" required>
+          
             <label for="comp">Nome do componente:</label>
             <input type="text" id="comp" name="componente" placeholder="Substitutiva" required>
 
@@ -45,15 +49,12 @@
             <label for="tipo">Tipo:</label>
             <input type="text" id="tipo" name="tipo" placeholder="Ex:Prova" required>
 
-            <label for="comp">Instituição:</label>
-            <input type="text" id="instit" name="instit" placeholder="EX: PUC Campinas" required>
-
           <button type="submit" class="btn">Cadastrar</button>
         </form>
 
       <!-- ===== TABELA ===== -->
       <section class="table-section">
-        <h2>Componentes</h2>
+        <h2 class="h2-table">Componentes</h2>
         <table>
           <thead>
             <tr>
