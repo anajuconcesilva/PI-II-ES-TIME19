@@ -223,7 +223,7 @@ th, td {
   border-bottom: 1px solid var(--bnt-color);
 }
 
-.edit, .delete {
+.edit{
   padding: 6px 10px;
   border: none;
   border-radius: 5px;
@@ -235,17 +235,8 @@ th, td {
   color: white;
 }
 
-.delete {
-  background-color: #e53935;
-  color: white;
-}
-
 .edit:hover {
   background-color: #3d8b41;
-}
-
-.delete:hover {
-  background-color: #c62828;
 }
   
   /* ===== RESPONSIVO ===== */
