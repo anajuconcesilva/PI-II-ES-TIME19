@@ -36,6 +36,15 @@
         <p class="descricao">Selecione a turma e a disciplina para visualizar as notas dos alunos.</p>
 
         <form>
+
+          <label for="instituição">Instituição:</label>
+            <select id="instituição" required>
+              <option value="" disabled selected>Selecione a instituição</option>
+              <option value="T1">Puc-Campinas</option>
+              <option value="T2">UNICAMP</option>
+              <option value="T3">UNIP</option>
+            </select>
+
             <label for="turma">Turma:</label>
             <select id="turma" required>
               <option value="" disabled selected>Selecione a turma</option>
@@ -64,6 +73,7 @@
             <tr>
               <th>Matrícula</th>
               <th>Nome</th>
+              <th>Instituição</th>
               <th>P1</th>
               <th>P2</th>
               <th>P3</th>
@@ -74,6 +84,7 @@
             <tr>
               <td>11111</td>
               <td>Abel Antimônio</td>
+              <td>Puc-Campinas</td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
@@ -82,6 +93,7 @@
             <tr>
               <td>11112</td>
               <td>Bianca Nióbio</td>
+              <td>UNICAMP</td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
               <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
