@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ - instituições</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
+        <li><a href="alunos.html">Alunos</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html">Exportar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="wrapper">
+    <section class="welcome">
+      <h2>Bem-vindo(a) ao NotaDez!</h2>
+      <p>Gerencie suas instituições, turmas, disciplinas e alunos!</p>
+    </section>
+
+    <section class="instituicoes-section">
+      <h3>Instituições Cadastradas</h3>
+
+      <!-- Lista de instituições -->
+      <div class="instituicoes-list">
+        <div class="instituicao-card">
+          <h4>PUC-Campinas</h4>
+          <p>Rua Dom Barreto, 1000 - Campinas/SP</p>
+          <button class="btn-acessar">Acessar</button>
+        </div>
+
+        <!-- Exemplo de mais instituições -->
+        <div class="instituicao-card">
+          <h4>Senac São Paulo</h4>
+          <p>Avenida Eng. Eusébio Stevaux, 823 - São Paulo/SP</p>
+          <button class="btn-acessar">Acessar</button>
+        </div>
+      </div>
+
+      <!-- Botão para adicionar nova -->
+      <div class="add-instituicao">
+        <a href="cadastro_instituicao.html" class="btn-nova">Cadastrar Nova Instituição</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    
+  </footer>
+
+  <script src="../JS/dashboard.js"></script>
+</body>
+</html>
