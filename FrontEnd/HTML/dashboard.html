@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - NotaDez</title>
+  <link rel="stylesheet" href="../CSS/styles-dashboard.css">
+</head>
+
+<body>
+  <!-- Barra de navegação -->
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ - gerenciamento</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
+        <li><a href="alunos.html">Alunos</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html">Exportar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main id="wrapper">
+    <section class="dashboard-header">
+      <h2 id="nomeInstituicao">Instituição</h2>
+      <p>Gerencie suas turmas, disciplinas, alunos e notas abaixo:</p>
+    </section>
+
+    <section class="cards-section">
+        <div class="card" data-url="turmas.html">
+            <h3>Turmas</h3>
+            <p>Gerencie e visualize todas as turmas cadastradas.</p>
+        </div>
+        <div class="card" data-url="disciplinas.html">
+            <h3>Disciplinas</h3>
+            <p>Cadastre e edite as disciplinas ministradas.</p>
+        </div>
+        <div class="card" data-url="alunos.html">
+            <h3>Alunos</h3>
+            <p>Visualize e adicione alunos por turma.</p>
+        </div>
+        <div class="card" data-url="notas.html">
+            <h3>Notas</h3>
+            <p>Acompanhe e registre as notas dos alunos.</p>
+        </div>
+        <div class="card" data-url="exportacao.html">
+            <h3>Exportação</h3>
+            <p>Exporte relatórios e grades de notas.</p>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
+
+
+</footer>
+
+<script src="../JS/dashboard.js"></script>
+</body>
+</html>

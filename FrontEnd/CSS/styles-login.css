@@ -1,0 +1,187 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --bg-color: linear-gradient(135deg, #cdd5ae, #d3a373);
+    --h1-color: #111;
+    --menu-color: #e9edca;
+    --p-color: #555;
+    --bnt-color: #536312; /*Tbm é a cor do houver do h1, do link e do form focus*/
+    --bnt-houver-color: #cdd5ae;
+    --link-houver-color: rgb(172, 9, 9);
+}
+
+@font-face {
+  font-family: 'FontePrincipal';
+  src: url('BILLO___.TTF') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#superbar {
+  width: 100%;
+  height: 8px;
+  background: var(--menu-color); 
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Container geral: logo esquerda + form direita */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  gap: 40px;
+}
+
+
+.logo img {
+  width: 400px;
+  border-radius: 200px;
+  border-color: #111;
+  animation: float 3s ease-in-out infinite; /* movimento contínuo */
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Animação balanço + brilho */
+.logo img:hover {
+  animation: swing 0.8s ease-in-out;
+  filter: drop-shadow(0 0 60px #faedcd);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+#wrapper {
+  background: #ffffffee;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+#header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#header h1 {
+  font-size: 40px;
+  font-family: 'FontePrincipal', Arial, sans-serif;
+  margin-bottom: 0.5rem;
+  color: var(--h1-color);
+}
+
+#header h1:hover{
+  color: var(--bnt-color);
+}
+
+#header p {
+  font-size: 14px;
+  color: var(--p-color);
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.form input:focus {
+  border-color: var(--bnt-color);
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  background: var(--bnt-color);/*COR DOS BUTTONS*/
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--bnt-houver-color);
+  color: #000000;
+}
+
+/* Estilo dos links abaixo do botão */
+.form .link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.form .link a {
+    color: #333; /* cor do link */
+    text-decoration: none;
+    margin: 5px 0;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.form .link a span.login {
+    color: var(--bnt-color); /* cor destacada apenas para "Faça login" */
+    font-weight: bold;
+}
+
+.form .link a span.login:hover {
+    color: var(--link-houver-color);
+}
+
+#footer {
+  width: 100%;
+  background: var(--menu-color);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+  display: none; /*TIREI A VISUALIZAÇÃO PQ TEREMOS QUE ARRUMAR COM TS, PRA APARECER SOMENTE COM A BARRA DE ROLAGEM*/
+}
+
+.devs:hover {
+  color: var(--bnt-color);
+}
