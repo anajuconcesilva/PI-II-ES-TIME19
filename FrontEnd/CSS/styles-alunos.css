@@ -25,13 +25,12 @@
 
 /* ===== BODY ===== */
 body {
-font-family: Arial, Helvetica, sans-serif;
-background: var(--bg-color);
-display: flex;
-justify-content: center;
-align-items: flex-start;
-min-height: 100vh;
-padding-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* ===== NAVBAR ===== */
@@ -108,12 +107,21 @@ padding-top: 100px;
 }
 
 /* ===== CONTAINER ===== */
+
+#wrapper {
+  margin-top: 130px;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
-  max-width: 750px;
-  margin: 0 auto 40px;
   background: #fff;
-  padding: 20px 30px;
+  width: 85%;
+  max-width: 750px;
   border-radius: 12px;
+  padding: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
