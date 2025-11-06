@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditoria - NotaDez</title>
+  <link rel="stylesheet" href="../CSS/styles-auditoria.css">
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ - auditoria do sistema</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
+        <li><a href="alunos.html">Alunos</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html">Exportar</a></li>
+        <li><a href="auditoria.html">Auditoria</a></li>
+
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <div id="wrapper">
+    <section class="header-section">
+      <h2>Registro de Auditoria</h2>
+      <p>Consulte as ações realizadas pelos usuários no sistema NotaDez.</p>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filter-section">
+      <form>
+        <div class="form-group">
+          <label for="usuario">Usuário:</label>
+          <select id="usuario">
+            <option value="">Selecione o usuário</option>
+            <option value="prof1">Prof. Ana Júlia</option>
+            <option value="prof2">Prof. Eduarda Prado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="acao">Ação:</label>
+          <select id="acao">
+            <option value="">Selecione a ação</option>
+            <option value="cadastro">Cadastro</option>
+            <option value="edicao">Edição</option>
+            <option value="exclusao">Exclusão</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data:</label>
+          <input type="date" id="data">
+        </div>
+
+        <button type="submit" class="btn">Filtrar</button>
+      </form>
+    </section>
+
+    <!-- TABELA DE AUDITORIA -->
+    <section class="table-section">
+      <h3>Atividades Recentes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Data/Hora</th>
+            <th>Usuário</th>
+            <th>Ação</th>
+            <th>Módulo</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06/11/2025 15:23</td>
+            <td>Ana Júlia Conceição</td>
+            <td>Cadastro</td>
+            <td>Disciplinas</td>
+            <td>Adicionou “Fundamentos de Banco de Dados”.</td>
+          </tr>
+          <tr>
+            <td>06/11/2025 15:45</td>
+            <td>Eduarda Prado</td>
+            <td>Edição</td>
+            <td>Alunos</td>
+            <td>Editou os dados de matrícula de Bianca Níobio.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
