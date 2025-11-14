@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Alunos</title>
+  <link rel="stylesheet" href="../CSS/styles-alunos.css">
+</head>
+<body>
+
+  <!--Menu superior -->
+  <header class="navbar">
+    <div class="logo-area">
+        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+        <h1 class="logo-text">NOTADEZ - grade de alunos</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
+        <li><a href="alunos.html" class="active">Alunos</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html" class="active">Exportar</a></li>
+
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!--Wrapper -->
+  <div id="wrapper">
+    <main class="container">
+      <section class="form-section">
+        <h2>Adicionar Novo Aluno</h2>
+        <form>
+
+          <label for="instituição">Instituição</label>
+          <input type="text" id="instituição" placeholder="Puc-Campinas">
+
+          <label for="turma">Turma</label>
+          <input type="text" id="turma" placeholder="Ex: Turma A" required>
+
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required>
+
+          <label for="matricula">Matrícula</label>
+          <input type="text" id="matricula" placeholder="Ex: 2025001234" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Ex: aluno@notadez.com" required>
+
+          <button type="submit" class="btn">Cadastrar Aluno</button>
+        </form>
+      </section>
+
+      <section class="table-section">
+        <h2>Alunos Cadastrados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Instituição</th>
+              <th>Turma</th>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>E-mail</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+<script src="../JS/alunos.js"></script>
+</body>
+</html>

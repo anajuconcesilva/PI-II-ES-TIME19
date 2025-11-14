@@ -1,0 +1,263 @@
+/* ===== RESET E FONTES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: linear-gradient(135deg, #cdd5ae, #d3a373);
+    --h1-color: #111;
+    --menu-color: #e9edca;
+    --p-color: #555;
+    --bnt-color: #536312; /*Tbm é a cor do houver do h1, do link e do form focus*/
+    --bnt-houver-color: #cdd5ae;
+    --link-houver-color: rgb(172, 9, 9);
+}
+
+@font-face {
+  font-family: 'FontePrincipal';
+  src: url('BILLO___.TTF') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== BODY ===== */
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: var(--bg-color);
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding-top: 100px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background-color: var(--menu-color);
+  color: var(--h1-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 60px; /* controla a margem lateral */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'FontePrincipal', Arial, sans-serif;
+}
+
+.logo-text:hover {
+  color: var(--bnt-color);
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+/* ===== MENU ===== */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    color: var(--h1-color);
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--bnt-color);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--bnt-color);
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-section {
+  margin-bottom: 32px;
+}
+
+h2 {
+  color: var(--h1-color);
+  margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.form input:focus {
+  border-color: var(--bnt-color);
+  outline: none;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 12px;
+  background: var(--bnt-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--bnt-houver-color);
+  color: var(--h1-color);
+}
+
+/* ===== TABELA ===== */
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section td:last-child {
+  display: flex;
+  flex-direction: column; /* Coloca os botões um em cima do outro */
+  align-items: center;    /* Centraliza horizontalmente */
+  gap: 6px;               /* Espaço pequeno entre os dois */
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--bnt-color);
+}
+
+.edit, .delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 70px;         /* Garante largura igual */
+  text-align: center;
+}
+
+.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #3d8b41;
+}
+
+.delete:hover {
+  background-color: #c62828;
+}
+
+/* ===== FOOTER ===== */
+#footer {
+  width: 100%;
+  background: var(--menu-color);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.devs:hover {
+  color: var(--bnt-color);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

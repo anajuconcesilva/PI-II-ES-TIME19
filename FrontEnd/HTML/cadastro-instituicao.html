@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Instituição</title>
+  <link rel="stylesheet" href="../CSS/styles-instituicao.css">
+</head>
+
+<body>
+  <div id="superbar"></div>
+
+  <div class="container">
+    <!-- Logo à esquerda -->
+    <div class="logo">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez">
+    </div>
+
+    <!-- Formulário à direita -->
+    <div id="wrapper">
+      <div id="header">
+        <h1>NOTADEZ</h1>
+        <p>Cadastre uma instituição:</p>
+      </div>
+
+      <form class="form">
+        <label for="nomeInstituicao">Nome da Instituição</label>
+        <input type="text" id="nomeInstituicao" placeholder="Ex: PUC-Campinas" required>
+
+        <label for="endereco">Endereço <span class="opcional">(opcional)</span></label>
+        <input type="text" id="endereco" placeholder="Ex: Rua Dom Barreto, 1000 - Campinas/SP">
+
+        <button type="submit" class="cadastrar" id="btn-cadastrar">Cadastrar Instituição</button>
+      </form>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>© 2025 NOTADEZ - Todos os direitos reservados.</p>
+    <p class="devs">Desenvolvido pelo Grupo G19 - Engenharia de Software</p>
+  </footer>
+
+  <script src="../JS/cadastro-instituicao.js"></script>
+</body>
+</html>

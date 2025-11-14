@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade de Notas</title>
+  <link rel="stylesheet" href="../CSS/styles-grade-notas.css">
+</head>
+<body>
+  <div id="wrapper">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="logo-area">
+        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+        <h1 class="logo-text">NOTADEZ - grade de notas</h1>
+      </div>
+
+      <nav class="menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="turmas.html">Turmas</a></li>
+            <li><a href="diciplinas.html">Disciplinas</a></li>
+            <li><a href="alunos.html">Alunos</a></li>
+            <li><a href="formula.html">Fórmula</a></li>
+            <li><a href="notas.html">Notas</a></li>
+            <li><a href="exportacao.html" class="active">Exportar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="container">
+      <!-- ===== FILTRO ===== -->
+      <section class="form-section">
+        <h2>Consultar Grade de Notas</h2>
+        <p class="descricao">Selecione a turma e a disciplina para visualizar as notas dos alunos.</p>
+
+        <form>
+
+          <label for="instituição">Instituição:</label>
+            <select id="instituição" required>
+              <option value="" disabled selected>Selecione a instituição</option>
+              <option value="T1">Puc-Campinas</option>
+              <option value="T2">UNICAMP</option>
+              <option value="T3">UNIP</option>
+            </select>
+
+            <label for="turma">Turma:</label>
+            <select id="turma" required>
+              <option value="" disabled selected>Selecione a turma</option>
+              <option value="T1">Turma A</option>
+              <option value="T2">Turma B</option>
+              <option value="T3">Turma C</option>
+            </select>
+
+          <label for="disciplina">Disciplina:</label>
+            <select id="disciplina" required>
+              <option value="" disabled selected>Selecione a disciplina</option>
+              <option value="FTGS">Fundamentos da TGS</option>
+              <option value="ES">Engenharia de Software</option>
+              <option value="BD">Banco de Dados</option>
+            </select>
+
+          <button type="submit" class="btn">Visualizar</button>
+        </form>
+      </section>
+
+      <!-- ===== TABELA ===== -->
+      <section class="table-section">
+        <h2>Grade de Notas - Turma A / Engenharia de Software</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Matrícula</th>
+              <th>Nome</th>
+              <th>Instituição</th>
+              <th>P1</th>
+              <th>P2</th>
+              <th>P3</th>
+              <th>Nota Final</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>11111</td>
+              <td>Abel Antimônio</td>
+              <td>Puc-Campinas</td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td class="nota-final">-</td>
+            </tr>
+            <tr>
+              <td>11112</td>
+              <td>Bianca Nióbio</td>
+              <td>UNICAMP</td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td><input type="number" step="0.01" min="0" max="10" placeholder="-" /></td>
+              <td class="nota-final">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== BOTÕES ===== -->
+      <section class="actions-section">
+        <button class="btn calcular">Calcular Média</button>
+        <a href="exportacao.html" class="btn exportar">Exportar Notas</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ - instituições</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index">Início</a></li>
+        <li><a href="turmas">Turmas</a></li>
+        <li><a href="diciplinas">Disciplinas</a></li>
+        <li><a href="alunos">Alunos</a></li>
+        <li><a href="formula">Fórmula</a></li>
+        <li><a href="notas">Notas</a></li>
+        <li><a href="exportacao">Exportar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="wrapper">
+    <section class="welcome">
+      <h2>Bem-vindo(a) ao NotaDez!</h2>
+      <p>Gerencie suas instituições, turmas, disciplinas e alunos!</p>
+    </section>
+
+    <section class="instituicoes-section">
+      <h3>Instituições Cadastradas</h3>
+
+      <!-- Lista de instituições -->
+      <div class="instituicoes-list" id="lista-instituicoes">
+  <!-- Será preenchido dinamicamente -->
+      </div>
+
+
+      <!-- Botão para adicionar nova -->
+      <div class="add-instituicao">
+        <a href="cadastrar-instituicao" class="btn-nova">Cadastrar Nova Instituição</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    
+  </footer>
+
+  <script src="../JS/dashboard.js"></script>
+</body>
+</html>

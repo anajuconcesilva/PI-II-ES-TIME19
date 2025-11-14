@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exportação de Dados</title>
+  <link rel="stylesheet" href="../CSS/styles-exportacao.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ- download de dados</h1>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="turmas.html">Turmas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
+        <li><a href="alunos.html">Alunos</a></li>
+        <li><a href="formula.html">Fórmula</a></li>
+        <li><a href="notas.html">Notas</a></li>
+        <li><a href="exportacao.html" class="active">Exportar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== WRAPPER ===== -->
+  <div id="wrapper">
+    <main class="container">
+      <section class="form-section">
+        <h2>Exportar Dados</h2>
+        <p class="descricao">
+          Selecione o tipo de informação que deseja exportar e o formato do arquivo.
+        </p>
+
+        <form>
+          <label for="tipo">Tipo de Dados</label>
+          <select id="tipo" name="tipo" required>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="alunos">Alunos</option>
+            <option value="turmas">Turmas</option>
+            <option value="disciplinas">Disciplinas</option>
+            <option value="notas">Notas</option>
+          </select>
+
+          <label for="formato">Formato do Arquivo</label>
+          <select id="formato" name="formato" required>
+            <option value="" disabled selected>Selecione o formato</option>
+            <option value="csv">CSV (.csv)</option>
+            <option value="excel">JSON (.json)</option>
+          </select>
+
+          <button type="submit" class="btn">Exportar Dados</button>
+        </form>
+      </section>
+
+      <section class="table-section">
+        <h2 class="h2-table">Dados exportados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>E-mail</th>
+              <th>Turma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Eduarda Prado</td>
+              <td>202501234</td>
+              <td>eduarda@notadez.com</td>
+              <td>Turma A</td>
+            </tr>
+            <tr>
+              <td>Marília Sara</td>
+              <td>202501235</td>
+              <td>marilia@notadez.com</td>
+              <td>Turma B</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

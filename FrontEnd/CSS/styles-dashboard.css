@@ -1,0 +1,186 @@
+/* ===== RESET ===== */
+* { /* Remove margens e espaçamentos padrão de todos os elementos */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Faz com que padding e bordas não aumentem o tamanho total do elemento */
+  font-family: "Poppins", sans-serif; /* Define a fonte padrão da página */
+}
+
+/* ===== VARIÁVEIS DE COR ===== */
+:root {
+  --bg-color: linear-gradient(135deg, #cdd5ae, #d3a373); /* Fundo em degradê */
+  --menu-color: #e9edca; /* Cor do menu e footer */
+  --bnt-color: #536312; /* Cor principal dos botões e destaques */
+  --bnt-hover-color: #cdd5ae; /* Cor quando o mouse passa sobre o botão */
+  --text-color: #333; /* Cor principal do texto */
+}
+
+/* ===== FONTE PERSONALIZADA ===== */
+@font-face {
+  font-family: 'FontePrincipal'; /* Nome da fonte para usar no CSS */
+  src: url('BILLO___.TTF') format('truetype'); /* Caminho e formato da fonte */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== BODY ===== */
+body {
+  background: var(--bg-color); /* Aplica o fundo em degradê definido nas variáveis */
+  height: 100vh; /* Faz o body ocupar a altura total da janela */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%; /* Ocupa toda a largura da tela */
+  background-color: var(--menu-color); /* Cor de fundo do menu */
+  color: var(--h1-color); /* Cor do texto (variável não usada, mas pode ser definida) */
+  display: flex; /* Coloca os itens da barra lado a lado */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-between; /* Espaça os itens: logo à esquerda, menu à direita */
+  padding: 12px 60px; /* Espaçamento interno do menu */
+  position: fixed; /* Fixa o menu no topo da tela */
+  top: 0; /* Cola o menu no topo */
+  left: 0; /* Cola à esquerda */
+  z-index: 10; /* Garante que o menu fique sobre outros elementos */
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1); /* Sombra sutil sob o menu */
+}
+
+/* ===== LOGO E TÍTULO ===== */
+.logo-area {
+  display: flex; /* Coloca logo e texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 15px; /* Espaço entre a logo e o texto */
+}
+
+.logo-text {
+  font-size: 1.5rem; /* Tamanho do texto da logo */
+  font-weight: 600; /* Negrito */
+  font-family: 'FontePrincipal', Arial, sans-serif; /* Fonte personalizada */
+}
+
+.logo-text:hover {
+  color: var(--bnt-color); /* Muda a cor ao passar o mouse */
+}
+
+.logo {
+  width: 45px; /* Largura da imagem da logo */
+  height: 45px; /* Altura da logo */
+  border-radius: 8px; /* Bordas levemente arredondadas */
+}
+
+/* ===== MENU ===== */
+.menu ul {
+  list-style: none; /* Remove os marcadores da lista */
+  display: flex; /* Deixa os itens lado a lado */
+  gap: 40px; /* Espaço entre cada item do menu */
+}
+
+.menu a {
+  position: relative; /* Permite o uso de ::after (linha animada) */
+  text-decoration: none; /* Remove o sublinhado */
+  color: var(--h1-color); /* Cor do texto */
+  font-weight: 600; /* Negrito */
+  transition: 0.3s ease; /* Suaviza o efeito de hover */
+}
+
+/* Linha animada que aparece ao passar o mouse */
+.menu a::after {
+  content: ""; /* Cria um elemento vazio */
+  position: absolute; /* Posiciona relativo ao link */
+  left: 0;
+  bottom: -4px; /* Coloca a linha logo abaixo do texto */
+  width: 0%; /* Começa com largura zero */
+  height: 2px; /* Espessura da linha */
+  background-color: var(--bnt-color); /* Cor da linha */
+  transition: width 0.3s ease; /* Animação de expansão */
+}
+
+.menu a:hover {
+  color: var(--bnt-color); /* Muda a cor do texto no hover */
+}
+
+.menu a:hover::after {
+  width: 100%; /* Expande a linha sob o link */
+}
+
+/* ===== CONTAINER PRINCIPAL (WRAPPER) ===== */
+#wrapper {
+  margin-top: 100px; /* Deixa espaço para o menu fixo */
+  max-width: 900px; /* Limita a largura máxima do conteúdo */
+  background: #fff; /* Fundo branco para o conteúdo */
+  border-radius: 12px; /* Bordas arredondadas */
+  padding: 30px; /* Espaçamento interno */
+  margin-left: auto;
+  margin-right: auto; /* Centraliza o container */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
+}
+
+/* ===== CABEÇALHO DO DASHBOARD ===== */
+.dashboard-header {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 30px; /* Espaço inferior */
+}
+
+.dashboard-header h2 {
+  font-size: 1.8rem; /* Tamanho do título */
+  color: var(--bnt-color); /* Cor principal */
+}
+
+.dashboard-header p {
+  color: #555; /* Cor cinza para o texto secundário */
+  margin-top: 8px; /* Espaço acima do parágrafo */
+}
+
+/* ===== SEÇÃO DE CARDS ===== */
+.cards-section {
+  display: flex; /* Coloca os cards lado a lado */
+  flex-wrap: wrap; /* Permite quebrar linha quando faltar espaço */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 25px; /* Espaço entre os cards */
+}
+
+.card {
+  background-color: #fafafa; /* Fundo claro */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 12px; /* Bordas arredondadas */
+  width: 240px; /* Largura fixa dos cards */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza texto e título */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  cursor: pointer; /* Mostra o cursor de clique */
+  transition: all 0.3s; /* Suaviza todas as animações */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Levanta o card um pouco */
+  background-color: var(--bnt-hover-color); /* Muda a cor do fundo */
+}
+
+.card h3 {
+  color: var(--bnt-color); /* Cor dos títulos dos cards */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.card p {
+  color: #444; /* Texto levemente escuro */
+  font-size: 14px; /* Tamanho da fonte do texto */
+}
+
+/* ===== Tentativa de menu responsivo ===== */
+@media (max-width: 768px) { /* Aplica quando a largura da tela for menor que 768px */
+  .navbar {
+    flex-direction: column; /* Empilha os itens da navbar */
+    align-items: flex-start; /* Alinha à esquerda */
+  }
+
+  .menu ul {
+    flex-direction: column; /* Empilha os links verticalmente */
+    gap: 12px; /* Reduz o espaço entre os itens */
+    width: 100%; /* Faz o menu ocupar a largura total */
+  }
+
+  .menu {
+    width: 100%;
+    margin-top: 10px; /* Espaço acima do menu empilhado */
+  }
+}

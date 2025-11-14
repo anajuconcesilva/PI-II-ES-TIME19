@@ -1,0 +1,9 @@
+# Dependências
+node_modules/
+
+# Builds e caches
+dist/
+build/
+.tmp/
+.cache/
+coverage/
