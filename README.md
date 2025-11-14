@@ -15,7 +15,7 @@ O **NotaDez** tem como objetivo auxiliar professores do ensino superior no **ger
 - 📊 **Quadro de notas por turma** (com edição e painel de auditoria)  
 - ➗ **Cálculo automático da nota final** baseado em fórmula definida pelo docente  
 - 🎯 **Coluna de notas ajustadas** (com arredondamento e ajustes manuais)  
-- 📤 **Exportação de notas em CSV ou JSON**  
+- 📤 **Exportação de notas em CSV**  
 
 ---
 
