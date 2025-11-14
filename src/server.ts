@@ -35,11 +35,6 @@ app.get('/teste', async (req: Request, res: Response) => { // Rota de teste da c
 
 //ROTAS PARA HTMLS (GET) Posteriormente, é possível migrar para express.static, mas será necessário ajustar os paths dos arquivos CSS e JS no FrontEnd e a organização das pastas.
 
-//rota principal para obter todos os alunos
-app.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(frontEndPath, 'HTML', 'index.html'));
-});
-
 app.get('/dashboard', (req: Request, res: Response) => {
     res.sendFile(path.join(frontEndPath, 'HTML', 'dashboard.html'));
 });
@@ -165,8 +160,37 @@ app.post('/adicionarDocente', async (req: Request, res: Response) => {
   }
 });
 
+
+// Rotas de curso 
+
+   //Rota principal para obter todos os cursos
+
+ import {getAllCursos} from './database/curso';
+
+  app.get('/Cursos', (req: Request, res: Response) => {
+  res.sendFile(path.join(frontEndPath, 'HTML', 'cadastro.html'));
+});
+
+   // Rota de adicionar curso
+
+   import { addCurso } from './database/curso';
+
+   app.post ('/adicionarCurso', async (req: Request, res: Response) => {
+    const { Instituicao, Nome, Periodo, ID} = req.body;
+
+    try{
+      const novoId = await addCurso(Instituicao, Nome,Periodo,ID);
+      res.status (201).json ({id: novoId, Instituicao, Nome, Periodo, ID});
+    } catch (erro) {
+      res.status (500).json ({ erro: (erro as Error).message});
+    }
+   });
+
 // Inicia o servidor
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
+
+

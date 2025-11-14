@@ -3,15 +3,12 @@ const form = document.querySelector('form');
 const tbody = document.querySelector('table tbody');
 
 // Função para criar uma nova linha na tabela
-function adicionarAluno(instituicao, turma, nome, matricula, email) {
+function adicionarAluno( nome, ra) {
   const tr = document.createElement('tr');
 
   tr.innerHTML = `
-    <td>${instituicao}</td>
-    <td>${turma}</td>
     <td>${nome}</td>
-    <td>${matricula}</td>
-    <td>${email}</td>
+    <td>${ra}</td>
     <td>
       <button class="edit">Editar</button>
       <button class="delete">Excluir</button>
@@ -25,11 +22,8 @@ function adicionarAluno(instituicao, turma, nome, matricula, email) {
 
   tr.querySelector('.edit').addEventListener('click', () => {
     // Preenche o formulário com os dados da linha para edição
-    document.getElementById('instituição').value = instituicao;
-    document.getElementById('turma').value = turma;
     document.getElementById('nome').value = nome;
-    document.getElementById('matricula').value = matricula;
-    document.getElementById('email').value = email;
+    document.getElementById('ra').value = ra;
 
     // Remove a linha antiga (vai substituir ao salvar)
     tr.remove();
@@ -78,15 +72,12 @@ form.addEventListener('submit', (e) => {
   e.preventDefault(); // Evita o envio padrão do formulário
 
   // Pega os valores do formulário
-  const instituicao = document.getElementById('instituição').value;
-  const turma = document.getElementById('turma').value;
   const nome = document.getElementById('nome').value;
-  const matricula = document.getElementById('matricula').value;
-  const email = document.getElementById('email').value;
-  const raConvertido = parseInt(matricula, 10);// Converte matrícula para número
+  const ra = document.getElementById('ra').value;
+  const raConvertido = parseInt(ra, 10);// Converte matrícula para número
 
   // Adiciona aluno na tabela
-  adicionarAluno(instituicao, turma, nome, matricula, email);
+  adicionarAluno( nome, ra);
 
   // Envia para o servidor
   cadastrarAlunoServidor(raConvertido, nome);
