@@ -54,6 +54,19 @@ app.get('/cadastro', (req: Request, res: Response) => {
 
 //ROTAS POST, GET, PUT, DELETE
 
+//rota adicionar aluno
+import { addAluno } from './database/alunos';
+
+app.post('/adicionarAlunos', async (req: Request, res: Response) => {
+  const { ra, nome } = req.body;
+  try {
+    const novoId = await addAluno(ra, nome);
+    res.status(201).json({ id: novoId, ra, nome });
+  } catch (erro) {
+    res.status(500).json({ erro: (erro as Error).message });
+  }
+});
+
 //rota adicionar instituicao
 import { addInstituicao } from "./database/instituicao";
 
@@ -73,6 +86,21 @@ app.post("/cadastrar-instituicao", async (req: Request, res: Response) => {
     res.status(500).json({ erro: "Erro ao cadastrar instituição" });
   }
 });
+
+//rota obter todas as instituicoes
+import { getAllInstituicoes } from "./database/instituicao";
+
+app.get("/instituicoes", async (req: Request, res: Response) => {
+  try {
+    const instituicoes = await getAllInstituicoes();
+    res.json(instituicoes);
+  } catch (erro) {
+    console.error("Erro ao buscar instituições:", erro);
+    res.status(500).json({ erro: "Erro interno" });
+  }
+});
+
+
 // rotas turma
 
 import { addTurma } from "./database/turma";
@@ -105,34 +133,6 @@ app.get("/turmas", async (req: Request, res: Response) => {
   } catch (erro) {
     console.error("Erro ao buscar instituições:", erro);
     res.status(500).json({ erro: "Erro interno" });
-  }
-});
-
-
-
-//rota obter todas as instituicoes
-import { getAllInstituicoes } from "./database/instituicao";
-
-app.get("/instituicoes", async (req: Request, res: Response) => {
-  try {
-    const instituicoes = await getAllInstituicoes();
-    res.json(instituicoes);
-  } catch (erro) {
-    console.error("Erro ao buscar instituições:", erro);
-    res.status(500).json({ erro: "Erro interno" });
-  }
-});
-
-//rota adicionar aluno
-import { addAluno } from './database/alunos';
-
-app.post('/adicionarAlunos', async (req: Request, res: Response) => {
-  const { ra, nome } = req.body;
-  try {
-    const novoId = await addAluno(ra, nome);
-    res.status(201).json({ id: novoId, ra, nome });
-  } catch (erro) {
-    res.status(500).json({ erro: (erro as Error).message });
   }
 });
 
@@ -186,6 +186,62 @@ app.post('/adicionarDocente', async (req: Request, res: Response) => {
     }
    });
 
+   // Rotas de componente de nota
+
+      //Rota principal para obter todos os componentes
+
+ import {getAllComponentes} from './database/componenteNota';
+
+  app.get('/Componentes', (req: Request, res: Response) => {
+  res.sendFile(path.join(frontEndPath, 'HTML', 'cadastro.html'));
+});  
+       // Adicionar componente de nota 
+
+          import { addComponenteNota} from './database/componenteNota';
+
+   app.post ('/adicionarComponenteNota', async (req: Request, res: Response) => {
+    const { id,nome,sigla} = req.body;
+
+    try{
+      const novoId = await addComponenteNota(id,nome,sigla);
+      res.status (201).json ({id: novoId, nome, sigla});
+    } catch (erro) {
+      res.status (500).json ({ erro: (erro as Error).message});
+    }
+   });
+
+
+    // excluir componente de nota 
+    
+import { deleteComponenteNota } from './database/componenteNota';
+
+app.delete('/componentenota/:id', async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id);
+
+    if (!Number.isFinite(id) || id <= 0) {
+      return res.status(400).json({ error: 'ID inválido.' });
+    }
+
+    const deleted = await deleteComponenteNota(id);
+    
+    if (!deleted) {
+      return res.status(404).json({ error: 'Componente de nota não encontrado.' });
+    }
+
+    return res.status(200).json({
+      message: 'Componente de nota excluído com sucesso',
+      id,
+    });
+
+  } catch (error) {
+    console.error('Erro ao excluir componente de nota:', error);
+    return res.status(500).json({
+      error: 'Erro interno ao excluir componente de nota.',
+    });
+  }
+});
+   
 // Inicia o servidor
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 app.listen(PORT, () => {
