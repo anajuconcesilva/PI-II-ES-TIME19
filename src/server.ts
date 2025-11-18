@@ -250,3 +250,53 @@ app.listen(PORT, () => {
 
 
 
+<<<<<<< Updated upstream
+=======
+//autor: Eduarda Prado Deiró
+
+const { testarEmail } = require("./config/mailer");
+
+
+// Middleware para converter JSON
+app.use(express.json());
+
+// Testar conexão com o banco
+
+app.get("/teste-banco", async (req: Request, res: Response) => {
+  try {
+    const [rows]: any = await pool.query("SELECT NOW() AS agora");
+    res.json({ mensagem: "Conexão funcionando ✅", data: rows[0].agora });
+  } catch (erro: any) {
+    res.status(500).json({ erro: erro.message });
+  }
+});
+
+//  Testar envio de e-mail
+app.get("/teste-email", async (req: Request, res: Response) => {
+  try {
+    await testarEmail();
+    res.json({ mensagem: "Tentando enviar e-mail..." });
+  } catch (erro: any) {
+    res.status(500).json({ erro: erro.message });
+  }
+});
+
+
+// rota esqueci minha senha
+
+app.post("/esqueci-senha", async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ erro: "E-mail é obrigatório" });
+  }
+
+  try {
+    await testarEmail(email);
+    res.json({ mensagem: "E-mail enviado com sucesso!" });
+  } catch (erro) {
+    res.status(500).json({ erro: "Erro ao enviar e-mail" });
+  }
+});
+
+>>>>>>> Stashed changes

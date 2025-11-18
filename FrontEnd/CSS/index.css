@@ -105,6 +105,23 @@ body {
   width: 100%; /* Linha se expande totalmente ao passar o mouse */
 }
 
+/* Estiliza o link (o ícone) dentro do <li> de log out */
+.menu ul .logout-btn a {
+    color: #FF0000; 
+    font-size: 1.2rem; 
+    
+    text-decoration: none; 
+    position: static; /* Necessário para sobrescrever o 'position: relative' do .menu a */
+}
+
+.menu ul .logout-btn a::after {
+    display: none;
+}
+
+.menu ul .logout-btn a:hover {
+    color: #CC0000; 
+}
+
 /* ===== WRAPPER ===== */
 #wrapper {
   margin-top: 100px; /* Espaço abaixo da navbar fixa */

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerenciamento de Turmas</title>
   <link rel="stylesheet" href="../CSS/styles-turmas.css">
 </head>
+
 <body>
   <div id="wrapper">
-    <!-- ===== NAVBAR ===== -->
+
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="logo-area">
         <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
@@ -17,81 +20,73 @@
 
       <nav class="menu">
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="turmas.html">Turmas</a></li>
-            <li><a href="curso.html">Disciplinas</a></li>
-            <li><a href="alunos.html">Alunos</a></li>
-            <li><a href="formula.html">Fórmula</a></li>
-            <li><a href="notas.html">Notas</a></li>
-            <li><a href="exportacao.html" class="active">Exportar</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="turmas.html" class="active">Turmas</a></li>
+          <li><a href="diciplinas.html">Disciplinas</a></li>
+          <li><a href="alunos.html">Alunos</a></li>
+          <li><a href="formula.html">Fórmula</a></li>
+          <li><a href="notas.html">Notas</a></li>
+          <li><a href="curso.html">Cursos</a></li>
+          <li><a href="exportacao.html">Exportar</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- ===== CONTEÚDO ===== -->
+    <!-- CONTEÚDO -->
     <main class="container">
-      <!-- ===== FILTRO ===== -->
+
+      <!-- FORMULÁRIO -->
       <section class="form-section">
         <h2>Gerenciamento de Turmas</h2>
-        <p class="descricao">Cadastre o nome da turma, o código e o apelido.</p>
+        <p class="descricao">Cadastre todas as informações da turma.</p>
 
-        <form>
+        <form id="formTurma">
+          <label>Disciplina:</label>
+          <select id="disciplina"></select>
 
-             <label for="instituição">Nome da instituição:</label>
-            <input type="text" id="instituição" name="instituição" placeholder="IEFSP" required>
+          <label>Número da Turma:</label>
+          <input type="number" id="numero" />
 
-            <label for="turma">Nome da turma:</label>
-            <input type="text" id="turma" name="turma" placeholder="EX:TURMA 101" required>
+          <label>Horário da Aula:</label>
+          <input type="text" id="horario" placeholder="Ex: 19:00 - 22:00" />
 
-            <label for="codigo">Código:</label>
-            <input type="text" id="codigo" name="codigo" placeholder="Ex:T101" required>
+          <label>Data de Início:</label>
+          <input type="date" id="dataInicio" />
 
-            <label for="apelido">Apelido:</label>
-            <input type="text" id="apelido" name="apelido" placeholder="Ex:T1" required>
+          <label>Data de Fim:</label>
+          <input type="date" id="dataFim" />
+
+          <label>Local da Aula:</label>
+          <input type="text" id="local" placeholder="Ex: Sala 101" />
 
           <button type="submit" class="btn">Cadastrar</button>
         </form>
+      </section>
 
-      <!-- ===== TABELA ===== -->
+      <!-- TABELA -->
       <section class="table-section">
-        <h2 class="h2-table">Dados exportados</h2>
+        <h2 class="h2-table">Turmas Cadastradas</h2>
         <table>
           <thead>
             <tr>
-                <th>Instituição</th>
-                <th>Nome da turma</th>
-                <th>Código</th>
-                <th>Apelido</th>
-                <th>Ações</th>
+              <th>ID</th>
+              <th>Disciplina</th>
+              <th>Número</th>
+              <th>Horário</th>
+              <th>Data Início</th>
+              <th>Data Fim</th>
+              <th>Local</th>
+              <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-                <td>IEFSP</td>
-                <td>TURMA 0101</td>
-                <td>T0101</td>
-                <td>T01 </td>
-                <td>
-                <button class="edit">Editar</button>
-                <button class="delete">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <td>FATEC</td>
-                <td>TURMA 0103</td>
-                <td>T01013</td>
-                <td>T03 </td>    
-                <td>
-                <button class="edit">Editar</button>
-                <button class="delete">Excluir</button>
-              </td>      
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
 
     </main>
   </div>
+
   <script src="../JS/turmas.js"></script>
 </body>
+
 </html>

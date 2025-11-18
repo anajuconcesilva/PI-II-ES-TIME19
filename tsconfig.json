@@ -7,10 +7,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src",
+    "rootDir": "BackEnd/src",
+    "baseUrl": "BackEnd/src",
     "moduleResolution": "node"
   },
-  "include": ["src/**/*"],
+  "include": ["BackEnd/src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

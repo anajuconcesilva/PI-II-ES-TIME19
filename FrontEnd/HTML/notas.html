@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grade de Notas</title>
   <link rel="stylesheet" href="../CSS/styles-grade-notas.css">
 </head>
+
 <body>
   <div id="wrapper">
     <!-- ===== NAVBAR ===== -->
@@ -17,13 +19,14 @@
 
       <nav class="menu">
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="turmas.html">Turmas</a></li>
-            <li><a href="curso.html">Disciplinas</a></li>
-            <li><a href="alunos.html">Alunos</a></li>
-            <li><a href="formula.html">Fórmula</a></li>
-            <li><a href="notas.html">Notas</a></li>
-            <li><a href="exportacao.html" class="active">Exportar</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="turmas.html">Turmas</a></li>
+          <li><a href="curso.html">Disciplinas</a></li>
+          <li><a href="alunos.html">Alunos</a></li>
+          <li><a href="formula.html">Fórmula</a></li>
+          <li><a href="notas.html">Notas</a></li>
+          <li><a href="curso.html">Cursos</a></li>
+          <li><a href="exportacao.html" class="active">Exportar</a></li>
         </ul>
       </nav>
     </header>
@@ -38,28 +41,28 @@
         <form>
 
           <label for="instituição">Instituição:</label>
-            <select id="instituição" required>
-              <option value="" disabled selected>Selecione a instituição</option>
-              <option value="T1">Puc-Campinas</option>
-              <option value="T2">UNICAMP</option>
-              <option value="T3">UNIP</option>
-            </select>
+          <select id="instituição" required>
+            <option value="" disabled selected>Selecione a instituição</option>
+            <option value="T1">Puc-Campinas</option>
+            <option value="T2">UNICAMP</option>
+            <option value="T3">UNIP</option>
+          </select>
 
-            <label for="turma">Turma:</label>
-            <select id="turma" required>
-              <option value="" disabled selected>Selecione a turma</option>
-              <option value="T1">Turma A</option>
-              <option value="T2">Turma B</option>
-              <option value="T3">Turma C</option>
-            </select>
+          <label for="turma">Turma:</label>
+          <select id="turma" required>
+            <option value="" disabled selected>Selecione a turma</option>
+            <option value="T1">Turma A</option>
+            <option value="T2">Turma B</option>
+            <option value="T3">Turma C</option>
+          </select>
 
           <label for="disciplina">Disciplina:</label>
-            <select id="disciplina" required>
-              <option value="" disabled selected>Selecione a disciplina</option>
-              <option value="FTGS">Fundamentos da TGS</option>
-              <option value="ES">Engenharia de Software</option>
-              <option value="BD">Banco de Dados</option>
-            </select>
+          <select id="disciplina" required>
+            <option value="" disabled selected>Selecione a disciplina</option>
+            <option value="FTGS">Fundamentos da TGS</option>
+            <option value="ES">Engenharia de Software</option>
+            <option value="BD">Banco de Dados</option>
+          </select>
 
           <button type="submit" class="btn">Visualizar</button>
         </form>
@@ -111,4 +114,5 @@
     </main>
   </div>
 </body>
+
 </html>

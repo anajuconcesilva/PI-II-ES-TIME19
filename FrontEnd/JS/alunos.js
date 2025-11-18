@@ -1,87 +1,63 @@
-// Seleciona elementos do formulário e tabela
-const form = document.querySelector('form');
-const tbody = document.querySelector('table tbody');
+const API = "http://localhost:3000";
 
-// Função para criar uma nova linha na tabela
-function adicionarAluno( nome, ra) {
+const form = document.getElementById('form-aluno');
+const tbody = document.getElementById('tbody-alunos');
+
+// Criar linha na tabela
+function adicionarAlunoNaTabela(turma, nome, ra) {
   const tr = document.createElement('tr');
-
   tr.innerHTML = `
+    <td>${turma}</td>
     <td>${nome}</td>
     <td>${ra}</td>
     <td>
       <button class="edit">Editar</button>
-      <button class="delete">Excluir</button>
+      <button class="delete" style="background:red;color:white;">Excluir</button>
     </td>
   `;
 
-  // Adiciona eventos aos botões da linha
   tr.querySelector('.delete').addEventListener('click', () => {
-    tr.remove(); // Remove a linha da tabela
+    fetch(`${API}/alunos/${ra}`, { method: 'DELETE' })
+      .then(res => res.json())
+      .then(() => tr.remove());
   });
 
-  tr.querySelector('.edit').addEventListener('click', () => {
-    // Preenche o formulário com os dados da linha para edição
-    document.getElementById('nome').value = nome;
-    document.getElementById('ra').value = ra;
-
-    // Remove a linha antiga (vai substituir ao salvar)
-    tr.remove();
-  });
-
-  tbody.appendChild(tr); // Adiciona a linha na tabela
+  tbody.appendChild(tr);
 }
 
-function cadastrarAlunoServidor(ra, nome) {
-  // Validação simples
-  if (!ra || !nome) {
-    window.alert("Preencha RA e Nome antes de cadastrar.");
-    return;
-  }
-
-  const dados = {
-    ra: ra,
-    nome: nome
-  };
-
-  fetch('/adicionarAlunos', {
+// Enviar aluno para o servidor
+function cadastrarAlunoServidor(ra, nome, turma) {
+  fetch(`${API}/alunos/cadastrar`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(dados)
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ RA: ra, Nome_Aluno: nome, ID_Turma: turma })
   })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Resposta não OK do servidor');
-      }
-      return response.json();
-    })
+    .then(res => res.json())
     .then(data => {
-      window.alert('Aluno cadastrado com sucesso!');
-      console.log('Resposta do servidor:', data);
+      console.log('Aluno cadastrado:', data);
+      adicionarAlunoNaTabela(turma, nome, ra);
     })
-    .catch(error => {
-      window.alert('Erro ao cadastrar aluno.');
-      console.error('Erro no servidor:', error);
+    .catch(err => console.error('Erro ao cadastrar aluno:', err));
+}
+
+// Evento submit do formulário
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const turma = document.getElementById('id_turma').value;
+  const nome = document.getElementById('nome').value;
+  const ra = document.getElementById('ra').value;
+
+  cadastrarAlunoServidor(ra, nome, turma);
+});
+
+// Carregar alunos já cadastrados
+function carregarAlunos() {
+  fetch(`${API}/alunos`)
+    .then(res => res.json())
+    .then(alunos => {
+      alunos.forEach(a => adicionarAlunoNaTabela(a.ID_Turma, a.Nome_Aluno, a.RA));
     });
 }
 
-// Evento de envio do formulário
-form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Evita o envio padrão do formulário
-
-  // Pega os valores do formulário
-  const nome = document.getElementById('nome').value;
-  const ra = document.getElementById('ra').value;
-  const raConvertido = parseInt(ra, 10);// Converte matrícula para número
-
-  // Adiciona aluno na tabela
-  adicionarAluno( nome, ra);
-
-  // Envia para o servidor
-  cadastrarAlunoServidor(raConvertido, nome);
-
-  // Limpa o formulário
-  form.reset();
-});
+carregarAlunos();

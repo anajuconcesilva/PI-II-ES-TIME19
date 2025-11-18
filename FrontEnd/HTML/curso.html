@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerenciamento de Cursos</title>
   <link rel="stylesheet" href="../CSS/styles-curso.css">
 </head>
+
 <body>
   <header class="navbar">
     <div class="logo-area">
-        <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
-        <h1 class="logo-text">NOTADEZ- curso</h1>
+      <img src="../IMG/logo_compressed.png" alt="Logo NotaDez" class="logo">
+      <h1 class="logo-text">NOTADEZ - Cursos</h1>
     </div>
 
     <nav class="menu">
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="turmas.html">Turmas</a></li>
-        <li><a href="curso.html">Disciplinas</a></li>
+        <li><a href="diciplinas.html">Disciplinas</a></li>
         <li><a href="alunos.html">Alunos</a></li>
         <li><a href="formula.html">Fórmula</a></li>
         <li><a href="notas.html">Notas</a></li>
+        <li><a href="curso.html" class="active">Cursos</a></li>
         <li><a href="exportacao.html">Exportar</a></li>
-
       </ul>
     </nav>
   </header>
@@ -32,20 +34,17 @@
       <h2>Adicionar Novo Curso</h2>
       <form>
 
-        <label for="nome">Instituição: </label>
-        <input type="text" id="Instituição" placeholder="Puc-Campinas" required>
+        <label for="instituicao">Instituição</label>
+        <select id="instituicao" required>
+          <option value="">Selecione...</option>
+        </select>
 
         <label for="nome">Nome do Curso</label>
         <input type="text" id="nome" placeholder="Engenharia de Software" required>
 
-        <label for="periodo">Período Curso</label>
-        <input type="text" id="periodo" placeholder="Ex: 2º semestre" required>
-
-        <label for="codigo">Código</label>
-        <input type="text" id="codigo" placeholder="Ex: ES01" required>
-
         <button type="submit" class="btn">Adicionar</button>
       </form>
+
     </section>
 
     <section class="table-section">
@@ -53,24 +52,13 @@
       <table>
         <thead>
           <tr>
-            <th>Instituição</th>
+            <th>ID da Instituição</th>
             <th>Nome</th>
-            <th>Período</th>
-            <th>Código</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Fundamentos da TGS</td>
-            <td>Puc-Campinas</td>
-            <td>FTGS01</td>
-            <td>1º semestre</td>
-            <td>
-              <button class="edit">Editar</button>
-              <button class="delete">Excluir</button>
-            </td>
-          </tr>
+
         </tbody>
       </table>
     </section>
@@ -78,4 +66,5 @@
 
   <script src="../JS/curso.js"></script>
 </body>
+
 </html>
