@@ -47,11 +47,16 @@ O **NotaDez** tem como objetivo auxiliar professores do ensino superior no **ger
 - Prof. Dr. Luã Muriana – lua.marcelo@puc-campinas.edu.br  
 
 ---
-## Observações sobre o funcionamento do projeto
-Ao acessar o projeto o docente responsavel por avaliar terá que executar, na sua maquina, o seguinte script do banco de dados para o funcionamento do sistema:
---workbanch
+## 📝 Observações sobre o funcionamento do projeto
+
+Para executar o sistema localmente, o docente responsável pela avaliação deverá rodar o seguinte script no **MySQL Workbench**.  
+Ele cria o banco de dados **projetonotadez** e todas as tabelas necessárias para o funcionamento do sistema.
+
+> ⚠️ **Atenção:** O sistema não funcionará corretamente sem a criação prévia dessas tabelas.
+
+```sql
 CREATE DATABASE IF NOT EXISTS projetonotadez;
-use projetonotadez;
+USE projetonotadez;
 
 CREATE TABLE Docente (
     ID_Docente INT PRIMARY KEY AUTO_INCREMENT,
@@ -114,22 +119,57 @@ CREATE TABLE Turma (
     FOREIGN KEY (ID_Disciplina) REFERENCES Disciplina(ID_Disciplina)
 );
 
-CCREATE TABLE Docente (
-    ID_Docente INT PRIMARY KEY AUTO_INCREMENT,
-    Nome_Docente VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
-    Telefone_Celular VARCHAR(20),
-    Senha VARCHAR(100) NOT NULL
+CREATE TABLE Aluno (
+    RA INT PRIMARY KEY,
+    Nome_Aluno VARCHAR(100) NOT NULL,
+    Matriculado_Dia DATE,
+    Data_Nascimento DATE,
+    ID_Turma INT,
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
 );
 
-CREATE TABLE Instituicao (
-    ID_Instituicao INT PRIMARY KEY AUTO_INCREMENT,
-    Nome_Instituicao VARCHAR(100) NOT NULL,
-    Sigla VARCHAR(20),
+CREATE TABLE Nota_Final (
+    ID_Nota_Final INT PRIMARY KEY AUTO_INCREMENT,
+    RA INT,
+    ID_Turma INT,
+    FOREIGN KEY (RA) REFERENCES Aluno(RA),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+
+CREATE TABLE Lancamento_Nota (
+    ID_Componente_Nota INT PRIMARY KEY,
+    Nota DECIMAL(5,2),
+    ID_Turma INT,
+    RA INT,
     ID_Docente INT,
+    FOREIGN KEY (ID_Componente_Nota) REFERENCES Componente_e_Nota(ID_Componente_Nota),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma),
+    FOREIGN KEY (RA) REFERENCES Aluno(RA),
     FOREIGN KEY (ID_Docente) REFERENCES Docente(ID_Docente)
 );
 
+CREATE TABLE Administra_Turma (
+    ID_Administra INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Docente INT,
+    ID_Turma INT,
+    FOREIGN KEY (ID_Docente) REFERENCES Docente(ID_Docente),
+    FOREIGN KEY (ID_Turma) REFERENCES Turma(ID_Turma)
+);
+
+CREATE TABLE Recuperacao_Senha (
+    ID_Recuperacao_Senha INT PRIMARY KEY AUTO_INCREMENT,
+    Token_Criado VARCHAR(255) NOT NULL,
+    Validade DATETIME,
+    Usado BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE Docente_Tem (
+    ID_Empregado INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Docente INT,
+    ID_Instituicao INT,
+    FOREIGN KEY (ID_Docente) REFERENCES Docente(ID_Docente),
+    FOREIGN KEY (ID_Instituicao) REFERENCES Instituicao(ID_Instituicao)
+);
 CREATE TABLE Curso (
     ID_Curso INT PRIMARY KEY AUTO_INCREMENT,
     Nome_Curso VARCHAR(100) NOT NULL,
